@@ -8,21 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTemperature = 1
     
-    let temperatures = ["Celsius", "Fahrenheit", "Kelvin"]
-    @State private var selectedTemperature = 0
+    let temperatureStyles = ["Celsius", "Fahrenheit", "Kelvin"]
     
     var body: some View {
-        VStack {
-            Picker("Select the user", selection: $selectedTemperature) {
-                ForEach(0 ..< temperatures.count) {
-                    Text(self.temperatures[$0])
+        NavigationView{
+            Form {
+                Section(header: Text("What Temperature Styles Do You Prefer?")) {
+                    Picker("Temperature Style", selection: $selectedTemperature) {
+                        ForEach(0 ..< temperatureStyles.count) {
+                            Text("\(self.temperatureStyles[$0])")
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
                 }
+                
             }
-            Text("You chose: Temperature # \(temperatures[selectedTemperature])")
         }
+        .navigationBarTitle("WeSplit")
     }
 }
+
 
 
 
