@@ -11,10 +11,12 @@ struct ContentView: View {
     @State private var selectedTemperature = 1
     @State private var selectedLength = 2
     @State private var selectedTime = 1
+    @State private var selectedVolume = 1
     
     let temperatureStyles = ["Celsius", "Fahrenheit", "Kelvin"]
     let lengthStyles = [ "Meters", "Kilometers", "Feet", "Yards", "Miles"]
     let timeStyles = [ "Seconds", "Minutes", "Hours", "Days"]
+    let volumeStyles = [ "Milliliters", "Liters", "Cups", "Pints", "Gallons"]
     
     var body: some View {
         NavigationView{
@@ -45,6 +47,16 @@ struct ContentView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
+                
+                Section(header: Text("What Volume Styles Do You Prefer?")) {
+                    Picker("Volume Style", selection: $selectedVolume) {
+                        ForEach(0 ..< volumeStyles.count) {
+                            Text("\(self.volumeStyles[$0])")
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+                
             }
         }
         .navigationBarTitle("Project 1")
