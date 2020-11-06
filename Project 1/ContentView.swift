@@ -9,8 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectedTemperature = 1
+    @State private var selectedLength = 2
+    @State private var selectedTime = 1
     
     let temperatureStyles = ["Celsius", "Fahrenheit", "Kelvin"]
+    let lengthStyles = [ "Meters", "Kilometers", "Feet", "Yards", "Miles"]
+    let timeStyles = [ "Seconds", "Minutes", "Hours", "Days"]
     
     var body: some View {
         NavigationView{
@@ -24,9 +28,26 @@ struct ContentView: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
                 
+                Section(header: Text("What Lengh Style Do You Prefer?")) {
+                    Picker("Length Style", selection: $selectedLength) {
+                        ForEach(0 ..< lengthStyles.count) {
+                            Text("\(self.lengthStyles[$0])")
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+                
+                Section(header: Text("What Time Styles Do You Prefer?")) {
+                    Picker("Time Style", selection: $selectedTime) {
+                        ForEach(0 ..< timeStyles.count) {
+                            Text("\(self.timeStyles[$0])")
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
             }
         }
-        .navigationBarTitle("WeSplit")
+        .navigationBarTitle("Project 1")
     }
 }
 
