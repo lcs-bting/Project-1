@@ -1,5 +1,5 @@
 //
-//  DistanceView.swift
+//  TemperatureView.swift
 //  Project 1
 //
 //  Created by Bill Ting on 2020-11-20.
@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct DistanceView: View {
-    @State private var fromUnitType = 2
-    @State private var toUnitType =  2
+
+struct TemperatureView: View {
+    @State private var fromUnitType = 1
+    @State private var toUnitType =  1
     @State private var currentValue = ""
     
-    let lengthStyles = [ "Meters", "Kilometers", "Feet", "Yards", "Miles"]
+    let temperatureStyles = [ "Celsius", "Fahrenheit", "Kelvin"]
     
     var body: some View {
         NavigationView{
@@ -24,8 +25,8 @@ struct DistanceView: View {
                 
                 Section(header: Text("What Unit Is The Current Value In?")) {
                     Picker("Length Style", selection: $fromUnitType) {
-                        ForEach(0 ..< lengthStyles.count) {
-                            Text("\(self.lengthStyles[$0])")
+                        ForEach(0 ..< temperatureStyles.count) {
+                            Text("\(self.temperatureStyles[$0])")
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
@@ -33,8 +34,8 @@ struct DistanceView: View {
                 
                 Section(header: Text("Convert To What Unit?")) {
                     Picker("Length Style", selection: $toUnitType) {
-                        ForEach(0 ..< lengthStyles.count) {
-                            Text("\(self.lengthStyles[$0])")
+                        ForEach(0 ..< temperatureStyles.count) {
+                            Text("\(self.temperatureStyles[$0])")
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
@@ -42,12 +43,14 @@ struct DistanceView: View {
                 
             }
         }
-        .navigationBarTitle("Distance Converter")
+        .navigationBarTitle("Temperature Converter")
     }
 }
 
-struct DistanceView_Previews: PreviewProvider {
+
+
+struct TemperatureView_Previews: PreviewProvider {
     static var previews: some View {
-        DistanceView()
+        TemperatureView()
     }
 }

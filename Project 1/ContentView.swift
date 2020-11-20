@@ -19,20 +19,32 @@ struct ContentView: View {
                 NavigationLink(
                     destination: DistanceView(),
                     label: {
-                        Text("Distance")
+                        Text("Distance Units")
                     })
-
+                
                 NavigationLink(
-                    destination: DistanceView(),
+                    destination: VolumeView(),
                     label: {
-                        Text("Volume")
+                        Text("Volume Units")
                     })
-
-
+                
+                NavigationLink(
+                    destination: TemperatureView(),
+                    label: {
+                        Text("Temperature Units")
+                    })
+                
+                NavigationLink(
+                    destination: TimeView(),
+                    label: {
+                        Text("Time Units")
+                    })
+                
+                
             }
             .navigationTitle("Unit Converter")
-
-
+            
+            
         }
     }
 }

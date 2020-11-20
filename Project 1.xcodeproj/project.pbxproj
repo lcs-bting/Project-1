@@ -12,6 +12,9 @@
 		A502E5872552FA1200F871AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A502E5862552FA1200F871AF /* Assets.xcassets */; };
 		A502E58A2552FA1200F871AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A502E5892552FA1200F871AF /* Preview Assets.xcassets */; };
 		A53BAF022568226B00149A9D /* DistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BAF012568226A00149A9D /* DistanceView.swift */; };
+		A53BAF052568234400149A9D /* VolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BAF042568234400149A9D /* VolumeView.swift */; };
+		A53BAF0C256825D300149A9D /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BAF0B256825D300149A9D /* TemperatureView.swift */; };
+		A53BAF0F2568279700149A9D /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BAF0E2568279700149A9D /* TimeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		A502E5892552FA1200F871AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A502E58B2552FA1200F871AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A53BAF012568226A00149A9D /* DistanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceView.swift; sourceTree = "<group>"; };
+		A53BAF042568234400149A9D /* VolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeView.swift; sourceTree = "<group>"; };
+		A53BAF0B256825D300149A9D /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
+		A53BAF0E2568279700149A9D /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				A502E58B2552FA1200F871AF /* Info.plist */,
 				A502E5882552FA1200F871AF /* Preview Content */,
 				A53BAF012568226A00149A9D /* DistanceView.swift */,
+				A53BAF042568234400149A9D /* VolumeView.swift */,
+				A53BAF0B256825D300149A9D /* TemperatureView.swift */,
+				A53BAF0E2568279700149A9D /* TimeView.swift */,
 			);
 			path = "Project 1";
 			sourceTree = "<group>";
@@ -141,9 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53BAF0C256825D300149A9D /* TemperatureView.swift in Sources */,
 				A502E5852552FA0600F871AF /* ContentView.swift in Sources */,
 				A53BAF022568226B00149A9D /* DistanceView.swift in Sources */,
+				A53BAF052568234400149A9D /* VolumeView.swift in Sources */,
 				A502E5832552FA0600F871AF /* Project_1App.swift in Sources */,
+				A53BAF0F2568279700149A9D /* TimeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

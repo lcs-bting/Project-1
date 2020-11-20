@@ -1,5 +1,5 @@
 //
-//  DistanceView.swift
+//  TimeView.swift
 //  Project 1
 //
 //  Created by Bill Ting on 2020-11-20.
@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct DistanceView: View {
-    @State private var fromUnitType = 2
-    @State private var toUnitType =  2
+
+struct TimeView: View {
+    @State private var fromUnitType = 1
+    @State private var toUnitType =  1
     @State private var currentValue = ""
     
-    let lengthStyles = [ "Meters", "Kilometers", "Feet", "Yards", "Miles"]
+    let timeStyles = [ "Seconds", "Minutes", "Hours", "Days"]
     
     var body: some View {
         NavigationView{
@@ -24,8 +25,8 @@ struct DistanceView: View {
                 
                 Section(header: Text("What Unit Is The Current Value In?")) {
                     Picker("Length Style", selection: $fromUnitType) {
-                        ForEach(0 ..< lengthStyles.count) {
-                            Text("\(self.lengthStyles[$0])")
+                        ForEach(0 ..< timeStyles.count) {
+                            Text("\(self.timeStyles[$0])")
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
@@ -33,8 +34,8 @@ struct DistanceView: View {
                 
                 Section(header: Text("Convert To What Unit?")) {
                     Picker("Length Style", selection: $toUnitType) {
-                        ForEach(0 ..< lengthStyles.count) {
-                            Text("\(self.lengthStyles[$0])")
+                        ForEach(0 ..< timeStyles.count) {
+                            Text("\(self.timeStyles[$0])")
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
@@ -42,12 +43,14 @@ struct DistanceView: View {
                 
             }
         }
-        .navigationBarTitle("Distance Converter")
+        .navigationBarTitle("Time converter")
     }
 }
 
-struct DistanceView_Previews: PreviewProvider {
+
+
+struct TimeView_Previews: PreviewProvider {
     static var previews: some View {
-        DistanceView()
+        TimeView()
     }
 }
