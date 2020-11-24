@@ -16,7 +16,7 @@ struct TemperatureView: View {
     let temperatureStyles = [ "Celsius", "Fahrenheit", "Kelvin"]
     
     var body: some View {
-        NavigationView{
+        
             Form {
                 Section(header: Text("What Is The Current Value?")) {
                     TextField("Amount", text: $currentValue)
@@ -42,7 +42,7 @@ struct TemperatureView: View {
                 }
                 
             }
-        }
+        
         .navigationBarTitle("Temperature Converter")
     }
 }

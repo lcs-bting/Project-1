@@ -15,32 +15,30 @@ struct DistanceView: View {
     let lengthStyles = [ "Meters", "Kilometers", "Feet", "Yards", "Miles"]
     
     var body: some View {
-        NavigationView{
-            Form {
-                Section(header: Text("What Is The Current Value?")) {
-                    TextField("Amount", text: $currentValue)
-                        .keyboardType(.decimalPad)
-                }
-                
-                Section(header: Text("What Unit Is The Current Value In?")) {
-                    Picker("Length Style", selection: $fromUnitType) {
-                        ForEach(0 ..< lengthStyles.count) {
-                            Text("\(self.lengthStyles[$0])")
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                }
-                
-                Section(header: Text("Convert To What Unit?")) {
-                    Picker("Length Style", selection: $toUnitType) {
-                        ForEach(0 ..< lengthStyles.count) {
-                            Text("\(self.lengthStyles[$0])")
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                }
-                
+        Form {
+            Section(header: Text("What Is The Current Value?")) {
+                TextField("Amount", text: $currentValue)
+                    .keyboardType(.decimalPad)
             }
+            
+            Section(header: Text("What Unit Is The Current Value In?")) {
+                Picker("Length Style", selection: $fromUnitType) {
+                    ForEach(0 ..< lengthStyles.count) {
+                        Text("\(self.lengthStyles[$0])")
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+            }
+            
+            Section(header: Text("Convert To What Unit?")) {
+                Picker("Length Style", selection: $toUnitType) {
+                    ForEach(0 ..< lengthStyles.count) {
+                        Text("\(self.lengthStyles[$0])")
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+            }
+            
         }
         .navigationBarTitle("Distance Converter")
     }

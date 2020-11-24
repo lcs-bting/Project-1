@@ -16,7 +16,7 @@ struct TimeView: View {
     let timeStyles = [ "Seconds", "Minutes", "Hours", "Days"]
     
     var body: some View {
-        NavigationView{
+        
             Form {
                 Section(header: Text("What Is The Current Value?")) {
                     TextField("Amount", text: $currentValue)
@@ -42,7 +42,7 @@ struct TimeView: View {
                 }
                 
             }
-        }
+        
         .navigationBarTitle("Time converter")
     }
 }

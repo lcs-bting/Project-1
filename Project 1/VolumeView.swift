@@ -15,7 +15,7 @@ struct VolumeView: View {
     let volumeStyles = [ "Milliliters", "Liters", "Cups", "Pints", "Gallons"]
     
     var body: some View {
-        NavigationView{
+       
             Form {
                 Section(header: Text("What Is The Current Value?")) {
                     TextField("Amount", text: $currentValue)
@@ -41,7 +41,7 @@ struct VolumeView: View {
                 }
                 
             }
-        }
+        
         .navigationBarTitle("Volume Converter")
     }
 }
