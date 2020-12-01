@@ -9,10 +9,21 @@ import SwiftUI
 
 struct DistanceView: View {
     @State private var fromUnitType = 2
-    @State private var toUnitType =  2
+    @State private var toUnitType = 2
     @State private var currentValue = ""
     
     let lengthStyles = [ "Meters", "Kilometers", "Feet", "Yards", "Miles"]
+
+    let conversionFactorsToBaseUnitToMetres = [1, 1000, 0.3048, 0.9144, 1609.34]
+    let conversionFactorsFromMetersToResultValue = [1, 0.001, 3.28084, 1.09361, 0.000621371]
+    
+    var result: Double {
+        let baseValue = Double(currentValue)! * conversionFactorsToBaseUnitToMetres[fromUnitType]
+        print(baseValue)
+        
+        return 0
+    }
+    
     
     var body: some View {
         Form {
@@ -39,6 +50,9 @@ struct DistanceView: View {
                 .pickerStyle(SegmentedPickerStyle())
             }
             
+            Section(header: Text("Result")) {
+                Text("\(result)")
+            }
         }
         .navigationBarTitle("Distance Converter")
     }
